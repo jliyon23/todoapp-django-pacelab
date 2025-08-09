@@ -72,7 +72,15 @@ class Task(models.Model):
         return self.title
 ```
 
-### Step 7: Create and Apply Migrations
+### Step 7: Define Task model in admin.py Create and Apply Migrations
+Edit `myapp/admin.py`:
+```python
+from django.contrib import admin
+from .models import Task
+
+admin.site.register(Task)
+```
+Then run this in terminal
 ```bash
 python manage.py makemigrations
 python manage.py migrate
